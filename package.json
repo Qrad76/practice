@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev" : "pacel index.html",
-    "build" : "pacel build index.html"
+    "dev" : "parcel index.html",
+    "build" : "parcel build index.html"
   },
   "keywords": [],
   "author": "",
