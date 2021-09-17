@@ -19,8 +19,70 @@
 // console.log('round', Math.round(3.5)); // 반올림 4
 // console.log('random', Math.random()); // 0.XXXX 형태로 난수 발생
 
-const numbers = [1, 2, 3, 4]
-const fruits = ['Apple', 'Banana', 'Cherry']
+//JS 데이터 실습
 
-console.log(numbers[1])
-console.log(fruits[2])
+
+
+
+
+// import _ from 'lodash'
+// import getType from './getType'
+// //import {random, user as Qrad} from './getRandom'
+// import * as R from './getRandom'
+
+// console.log(_.camelCase('the hello world'));
+// console.log(getType([1,2,3]));
+// // console.log(random());
+// console.log('sss');
+// console.log(R);
+
+
+
+// const usersA = [{
+//     userId: '1',
+//     name: 'Qrad??'
+//   },
+//   {
+//     userId: '2',
+//     name: 'Neo'
+//   }
+// ]
+
+// const usersB = [{
+//   userId: '1',
+//   name: 'Qrad!!'
+// },
+// {
+//   userId: '3',
+//   name: 'Army'
+// }
+// ]
+
+// const usersC = usersA.concat(usersB);
+// console.log('concat', usersC);
+
+// console.log('uniq', _.uniqBy(usersC, 'userId'))
+
+
+// const usersD = _.unionBy(usersA, usersB,'userId')
+// console.log(usersD)
+
+
+import _ from 'lodash'
+const users =[
+{userId: '1', name:'TT'},
+{userId: '2', name:'AA'},
+{userId: '3', name:'EE'},
+{userId: '4', name:'QQ'},
+{userId: '5', name:'YY'},
+{userId: '6', name:'UU'},
+{userId: '7', name:'II'}
+]
+
+const foundUser = _.find(users, {name:'EE'}); 
+const foundUserIndex = _.findIndex(users, {name:'EE'});
+console.log(foundUser)
+console.log(foundUserIndex)
+
+_.remove(users, {name:'TT'})
+console.log(users)
