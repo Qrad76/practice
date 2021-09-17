@@ -23,8 +23,6 @@
 
 
 
-
-
 // import _ from 'lodash'
 // import getType from './getType'
 // //import {random, user as Qrad} from './getRandom'
@@ -68,21 +66,63 @@
 // console.log(usersD)
 
 
-import _ from 'lodash'
-const users =[
-{userId: '1', name:'TT'},
-{userId: '2', name:'AA'},
-{userId: '3', name:'EE'},
-{userId: '4', name:'QQ'},
-{userId: '5', name:'YY'},
-{userId: '6', name:'UU'},
-{userId: '7', name:'II'}
-]
+// import _ from 'lodash'
+// const users =[
+// {userId: '1', name:'TT'},
+// {userId: '2', name:'AA'},
+// {userId: '3', name:'EE'},
+// {userId: '4', name:'QQ'},
+// {userId: '5', name:'YY'},
+// {userId: '6', name:'UU'},
+// {userId: '7', name:'II'}
+// ]
 
-const foundUser = _.find(users, {name:'EE'}); 
-const foundUserIndex = _.findIndex(users, {name:'EE'});
-console.log(foundUser)
-console.log(foundUserIndex)
+// const foundUser = _.find(users, {name:'EE'}); 
+// const foundUserIndex = _.findIndex(users, {name:'EE'});
+// console.log(foundUser)
+// console.log(foundUserIndex)
 
-_.remove(users, {name:'TT'})
-console.log(users)
+// _.remove(users, {name:'TT'})
+// console.log(users)
+
+// import myData from '../json/myData.json'
+
+// let a =myData.boolean;
+// console.log(a)
+
+// const user = {
+//   name: "Qrad",
+//   age: 32,
+//   emails: [
+//     'Qrad76@gmail.com',
+//     'thesecon@gmail.com'
+//   ]
+// }
+
+// localStorage.setItem('user', JSON.stringify(user));
+// console.log(JSON.parse(localStorage.getItem('user')))
+// localStorage.removeItem('user')
+
+
+// const obj = JSON.parse(localStorage.getItem('user'))
+// obj.age = 22;
+// console.log(obj.age);
+// localStorage.setItem('user', JSON.stringify(obj));
+
+
+
+import axios from 'axios'
+function fetchMovie(){
+  axios
+  .get('https://www.omdbapi.com/?apikey=7035c60c&s=frozen')
+  .then(res=> {
+    console.log(res)
+    const h1El = document.querySelector("h1")
+    const imgEl = document.querySelector(".poster")
+    h1El.textContent = res.data.Search[0].Title;
+    imgEl.src = res.data.Search[0].Poster;
+  });
+
+}
+
+fetchMovie();
