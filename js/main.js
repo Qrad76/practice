@@ -111,18 +111,58 @@
 
 
 
-import axios from 'axios'
-function fetchMovie(){
-  axios
-  .get('https://www.omdbapi.com/?apikey=7035c60c&s=frozen')
-  .then(res=> {
-    console.log(res)
-    const h1El = document.querySelector("h1")
-    const imgEl = document.querySelector(".poster")
-    h1El.textContent = res.data.Search[0].Title;
-    imgEl.src = res.data.Search[0].Poster;
-  });
+// import axios from 'axios'
+// function fetchMovie(){
+//   axios
+//   .get('https://www.omdbapi.com/?apikey=7035c60c&s=frozen')
+//   .then(res=> {
+//     console.log(res)
+//     const h1El = document.querySelector("h1")
+//     const imgEl = document.querySelector(".poster")
+//     h1El.textContent = res.data.Search[0].Title;
+//     imgEl.src = res.data.Search[0].Poster;
+//   });
 
-}
+// }
 
-fetchMovie();
+// fetchMovie();
+
+
+
+// let str =`
+// 010-1234-5678
+// thesecon@gmail.com
+// https://www.sdfsdf.com/?apikey=123$s=frozen
+// The quick the the fox
+// abbcccdddd
+// http://localhost:1234
+
+// `
+// const h=`  the hello  world   !
+
+// `
+
+// console.log(h.match(/\s/g))
+
+
+
+// const regexp = new RegExp('the', 'gi')
+
+// const regexp =/the/gi
+// console.log(regexp.test(str))
+// str = console.log(str.replace(regexp, 'AAA'))
+// str = str.replace(regexp, 'AAA')
+// console.log(str);
+
+
+
+const str =`
+010-1234-5678
+thesecon@gmail.com
+https://www.sdfsdf.com/?apikey=123$s=frozen
+The quick the the
+abbcccdddd
+`
+
+console.log(str.match(/.{1,}(?=\@)/g));
+console.log(str.match(/(?<=\@).{1,}/g));
